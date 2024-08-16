@@ -34,4 +34,25 @@
 	</header><!-- #masthead -->
 
     <div id="menu">
-    </div>
+		<div class="menu_main">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/png/logo.png" alt="Logo Fleurs d'oranger & chats errants" class="menu_logo" />
+		<ul class="menu_ul">
+			<li><a href="#story">Histoire</a></li>
+			<li><a href="#characters">Personnages</a></li>
+			<li><a href="#place">Lieu</a></li>
+			<li><a href="#studio">Studio Koukaki</a></li>
+        </ul>
+		</div>
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/svg/Studio Koukaki.svg" alt="Studio Koukaki" class="studio_logo" />
+    <div class="menu_decor">
+		<div class="orchid_violet"></div>
+		<div class="cat_blue"></div>
+		<div class="marguerite"></div>
+		<div class="cat_grey"></div>
+		<div class="cat_orange"></div>
+		<div class="flower_orange"></div>
+		<div class="flower_violet"></div>
+		<div class="flower_blur"></div>
+	</div>
+	</div>
+

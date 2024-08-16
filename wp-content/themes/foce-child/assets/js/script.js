@@ -68,3 +68,28 @@ window.addEventListener('scroll', function() {
         littleCloud.style.transform = `translateX(-${translateXValue / 2}px)`; // Moins rapide pour créer un effet de profondeur
     }
 });
+
+/* MENU */
+
+document.addEventListener('DOMContentLoaded', function() {
+     // Sélectionner le bouton burger et le menu
+     const burger = document.querySelector('.menu_burger');
+     const menu = document.getElementById('menu');
+     const menuLinks = document.querySelectorAll('.menu_ul li a');
+     
+     // Ajouter un événement de clic sur le bouton burger
+     burger.addEventListener('click', function() {
+         // Ajouter ou retirer la classe 'active' au menu
+         menu.classList.toggle('active');
+         burger.classList.toggle('close');
+     });
+
+      // Ajouter un événement de clic sur chaque lien du menu
+    menuLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            // Fermer le menu après avoir cliqué sur un lien
+            menu.classList.remove('active');
+            burger.classList.remove('close');
+        });
+    });
+});

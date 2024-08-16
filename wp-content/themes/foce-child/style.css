@@ -46,8 +46,13 @@
     }
 }
 
-.story__article::after, .site-footer::after, .site-footer::before, .site-footer ul::after, #studio h2::before {
+.story__article::after, .site-footer::after, .site-footer::before, .site-footer ul::after, #studio h2::before, .story h2::after, .orchid_violet, .flower_orange, .flower_violet, .flower_blur, .marguerite  {
     animation: rotate 20s linear infinite; /* Applique l'animation */
+}
+
+.story h2::after {
+    width: 155px;
+    height: 155px;
 }
 
 /* Section nomination aux Oscars*/ 
@@ -274,8 +279,8 @@ section > h2 span {
 nav#site-navigation {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Espace entre les éléments, le h1 sera centré, le burger à droite */
-    padding: 1em; /* Optionnel : Ajoute du padding autour du contenu */
+    justify-content: space-between;
+    padding: 1em 9em;
     position: fixed;
     max-width: 1440px;
 }
@@ -299,19 +304,189 @@ nav#site-navigation {
     background-size: contain;
     cursor: pointer; /* Change le curseur au survol */
 }
+.menu_burger.close {
+    background-image: url("./assets/svg/Burger croix.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 29px;
+}
 
 div#menu {
-    background: #FFD5A2;
+    background: #FFF5E9;
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 80px);
     z-index: 1;
     box-sizing: border-box;
     max-width: 1440px;
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    padding: 25px;
+    overflow: hidden;
+}
+
+.menu_logo{
+    width: 190px;
+    height: auto;
+}
+
+.menu_ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 57px;
+}
+
+.menu_ul a {
+    color: #000;
+    text-align: center;
+    font-family: "Roboto Mono";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+    text-decoration: none;
+}
+
+.menu_ul a:hover {
+    text-shadow: 0px 0px 14px #FF5C00;
+}
+
+.menu_ul li {
+    list-style: none;
+    text-align: center;
+}
+
+#menu.active{
+    display: flex;
+}
+
+.menu_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:25px;
+}
+
+#primary{
+    overflow: hidden;
 }
 
 main {
     padding-top: 80px;
 }
 
+.menu_decor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.orchid_violet{
+    background-image: url('./assets/svg/Orchid.svg');
+    width: 172px;
+    height: 168px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 53px;
+    left: -59px;
+}
+
+.cat_blue{
+    background-image: url('./assets/svg/cat.svg');
+    width: 110px;
+    height: 99px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 152px;
+    left: 306px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.marguerite{
+    background-image: url('./assets/svg/Sunflower.svg');
+    width: 216px;
+    height: 216px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 77px;
+    right: 226px;
+}
+
+.cat_grey{
+    background-image: url('./assets/svg/cat2.svg');
+    width: 155px;
+    height: 148px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 418px;
+    right: 205px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cat_orange{
+    background-image: url('./assets/svg/cat3.svg');
+    width: 106px;
+    height: 95px;
+    transform: rotate(-0.512deg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top:640px;
+    left:66px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.flower_orange{
+    background-image: url('./assets/svg/Flower.svg');
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    position: absolute;
+    top:440px;
+    left:200px;
+}
+
+.flower_violet{
+    background-image: url('./assets/svg/Random\ Flower.svg');
+    width: 63px;
+    height: 63px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    position: absolute;
+    top: 350px;
+    right: -26px;
+}
+
+.flower_blur{
+    background-image: url('./assets/svg/Hibiscus\ footer.svg');
+    width: 626px;
+    height: 626px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;  
+    position: absolute;
+    top:576px;
+    right:-313px;
+}
+
+section,article#characters,article#place{
+    scroll-margin-top: 80px;
+}

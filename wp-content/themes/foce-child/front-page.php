@@ -13,7 +13,7 @@ get_header();
                 </video>
             </div>
         </section>
-        <section id="#story" class="story">
+        <section id="story" class="story">
             <h2><div><span>L'histoire</span></div></h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
