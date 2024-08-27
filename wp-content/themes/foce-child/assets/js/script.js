@@ -1,3 +1,4 @@
+// Animation des titres H2
 document.addEventListener('DOMContentLoaded', function() {
     const titles = document.querySelectorAll('section > h2');
 
@@ -11,11 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     window.addEventListener('scroll', handleScroll);
 });
 
-// JavaScript pour l'effet de parallaxe
+// Effet de parallaxe entre le titre et la vidéo
 window.addEventListener('scroll', function () {
     const scrollPosition = window.scrollY;
     
@@ -27,24 +27,27 @@ window.addEventListener('scroll', function () {
     }
 });
 
+// Carousel des personnages
 const carousel = document.querySelector('.characters_slide');
 if(carousel){
     var swiper = new Swiper(".characters_slide", {
+        direction: 'horizontal',
         effect: "coverflow",
         grabCursor: true,
-        centeredSlides: true,
         slidesPerView: "auto",
+        centeredSlides: true, // Centrer la diapositive active
+        loop: true, // Activer le mode loop pour créer l'effet de duplication
         coverflowEffect: {
             rotate: 50,
             stretch: 0,
-            depth: 100,
+            depth: 0,
             modifier: 1,
-            slideShadows: true,
+            slideShadows: false,
         }
     });
 }
 
-
+// Déplacement des nuages
 window.addEventListener('scroll', function() {
     const placeSection = document.getElementById('place');
     const bigCloud = document.getElementById('big-cloud');

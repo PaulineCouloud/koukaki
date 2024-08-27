@@ -12,6 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+        <!--Ajout de la section Oscar -->
     <section id="oscar">
             <h3 class="text-oscar">Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
             <img class="img-oscar" src="/wp-content/themes/foce-child/assets/png/oscar.png" alt="Logo nomination aux oscars" />

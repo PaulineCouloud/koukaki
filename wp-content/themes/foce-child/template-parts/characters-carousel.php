@@ -7,19 +7,23 @@ $args = array(
 
 );
 $characters_query = new WP_Query($args);
-// Assure-toi que tu as récupéré les personnages via WP_Query dans ton fichier principal
 if ($characters_query->have_posts()) : ?>
     <!-- Swiper -->
     <div class="swiper characters_slide">
         <div class="swiper-wrapper">
             <?php
-            while ($characters_query->have_posts()) : $characters_query->the_post();
-                ?>
-                <div class="swiper-slide">
-                    <?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
-                    <figcaption><?php the_title(); ?></figcaption>
-                </div>
-            <?php endwhile; ?>
+           for($i=0;$i<10;$i++){
+                while ($characters_query->have_posts()) : $characters_query->the_post();
+                    ?>
+                    <div class="swiper-slide">
+                        <?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
+                        <figcaption><?php the_title(); ?></figcaption>
+                    </div>
+                <?php endwhile; ?>
+            <?php
+            }
+        ?>
+            
         </div>
     </div>
 <?php

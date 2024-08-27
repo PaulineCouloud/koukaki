@@ -1,0 +1,446 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'occasion de la nomination aux Oscars Shorts
+ Version: 0.1*/
+
+// Apparition des sections dans la page
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.site-main
+  section
+    opacity: 0 // Initialement masqué
+    animation: fadeIn 0s ease-in forwards // Applique l'animation
+
+    &:nth-child(1) //Première section
+      animation-delay: 0.5s
+
+    &:nth-child(2) //Deuxième section
+      animation-delay: 1.5s
+
+    &:nth-child(3) //Troisième section
+      animation-delay: 2.5s
+
+// Animations des fleurs qui tournent
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.story__article::after,
+.site-footer::after,
+.site-footer::before,
+.site-footer ul::after,
+#studio h2::before,
+.story h2::after,
+.orchid_violet,
+.flower_orange,
+.flower_violet,
+.flower_blur,
+.marguerite
+  animation: rotate 20s linear infinite // Applique l'animation
+
+.story h2::after
+  width: 155px
+  height: 155px
+
+// Section nomination aux Oscars
+#oscar
+  width: 966px
+  height: 200px
+  display: flex
+  margin-bottom: 273px
+  justify-content: space-between
+  max-width: 90%
+
+  .img-oscar
+    width: 279px
+    height: fit-content
+
+  .text-oscar
+    width: 643px
+    height: fit-content
+    color: #FFF5E9
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    font-family: "Quicksand", sans-serif
+    font-size: 42px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: -0.84px
+    padding: 0
+    margin: 0
+    text-align: left
+    max-width: 100%
+    position: relative
+
+.site-footer
+  flex-direction: column
+  align-items: center
+  padding-top: 10em
+
+  &::after
+    bottom: 34em
+
+h3.text-oscar
+  &::after
+    content: ''
+    display: flex
+    width: 120%
+    height: 170%
+    background-image: url("/wp-content/themes/foce-child/assets/png/oscar_fond.png")
+    background-size: 100% 100%
+    position: absolute
+    top: -31%
+    z-index: -1
+    left: -12%
+
+@media all and (max-width: 920px)
+  section#oscar
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 20px
+
+// Animation titres H2
+section > h2 > div
+  overflow: hidden
+
+section > h2 span
+  display: inline-block
+  transform: translateY(100%) // Les mots commencent en bas, hors de la vue
+  transition: transform 0.2s ease-in-out // Animation de montée
+
+// Quand la classe 'scroll-animate' est ajoutée, chaque mot apparaît séquentiellement
+.scroll-animate
+  span:nth-child(1)
+    transition-delay: 0.2s // Le premier mot apparaît
+    transform: translateY(0)
+
+  span:nth-child(2)
+    transition-delay: 0.5s // Le deuxième mot avec un délai de 0.5s
+    transform: translateY(0)
+
+  span:nth-child(3)
+    transition-delay: 0.8s // Le troisième mot avec un délai de 0.8s
+    transform: translateY(0)
+
+  span:nth-child(4)
+    transition-delay: 1s // Le quatrième mot avec un délai de 1s
+    transform: translateY(0)
+
+// Vidéo
+.banner
+  position: relative
+  overflow: hidden // Empêche les éléments de dépasser
+
+  .video-container
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1 // Place la vidéo derrière le contenu
+    overflow: hidden
+
+  video
+    width: 100%
+    height: 100%
+    object-fit: cover // Assure que la vidéo couvre tout l'espace sans déformation
+
+  img // Avec Animation de flottement du titre
+    position: relative
+    display: inline-block // Assure que l'image est centrée correctement
+    animation: float 6s ease-in-out infinite // Applique l'animation de flottement
+
+// Image de fond pour les petits écrans
+@media (max-width: 768px)
+  .banner
+    .video-container
+      display: none // Masque la vidéo sur les petits écrans
+
+    img
+      display: block // Affiche l'image de fond
+      width: 100%
+      height: auto // Assure que l'image garde ses proportions
+
+// Animation de flottement ample
+@keyframes float
+  0%
+    transform: translate(0, 0) // Position initiale
+  25%
+    transform: translate(-15px, -15px) // Déplacement vers le haut à gauche
+  50%
+    transform: translate(15px, 15px) // Déplacement vers le bas à droite
+  75%
+    transform: translate(-15px, 15px) // Déplacement vers le bas à gauche
+  100%
+    transform: translate(0, 0) // Retour à la position initiale
+
+// Styles pour le carrousel Swiper
+.swiper
+  width: 100%
+  height: 450px 
+  padding-top: 50px
+
+.swiper-slide
+  background-position: center
+  background-size: cover
+  width: 300px
+  height: 300px
+
+  img
+    display: block
+    width: 100%
+    height: auto
+
+  figcaption
+    text-align: center
+    color: #000
+    margin-top: 10px
+
+
+// Nuages qui se déplacent
+.story #place
+  background-image: url(./assets/png/Studio_Koukaki-image_place.png)
+  position: relative
+
+#big-cloud
+  background-image: url(./assets/png/big_cloud.png)
+  width: 316px
+  height: 122px
+  position: absolute
+  right: 40px
+  top: 67px
+  filter: blur(20px)
+
+#little-cloud
+  background-image: url(./assets/png/little_cloud.png)
+  width: 144px
+  height: 55px
+  position: absolute
+  right: 450px
+  top: 248px
+  filter: blur(20px)
+
+// Création menu Burger
+nav#site-navigation
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 1em 9em
+  position: fixed
+  max-width: 1440px
+
+#site-navigation h1
+  color: #000
+  font-family: "Quicksand", sans-serif
+  font-size: 21.48px
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  letter-spacing: -0.43px
+  flex: 1 // Prend autant de place que possible, centré automatiquement
+  text-align: center 
+  margin: 0 
+
+.menu_burger
+  background-image: url(./assets/svg/Burger.svg)
+  width: 40px
+  height: 18px
+  background-size: contain
+  cursor: pointer // Change le curseur au survol
+
+  &.close
+    background-image: url("./assets/svg/Burger croix.svg")
+    background-repeat: no-repeat
+    background-position: center
+    height: 29px
+
+div#menu
+  background: #FFF5E9
+  position: fixed
+  width: 100%
+  height: calc(100% - 80px)
+  z-index: 1
+  box-sizing: border-box
+  max-width: 1440px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  margin-top: 80px
+  padding: 25px
+  overflow: hidden
+  transition: all 0.2s ease-in-out
+  opacity: 0 
+  z-index: -1
+
+  &.active
+    display: flex
+    opacity: 1
+    z-index: 100000000
+
+.menu_logo
+  width: 190px
+  height: auto
+
+.menu_ul
+  padding: 0
+  margin: 0
+  display: flex
+  flex-direction: column
+  gap: 57px
+
+  a
+    color: #000
+    text-align: center
+    font-family: "Roboto Mono"
+    font-size: 64px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    text-decoration: none
+
+    &:hover
+      text-shadow: 0px 0px 14px #FF5C00
+
+  li
+    list-style: none
+    text-align: center
+
+.menu_main
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 25px
+
+#primary
+  overflow: hidden
+
+main
+  padding-top: 80px
+
+.menu_decor
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: -1
+
+.orchid_violet
+  background-image: url('./assets/svg/Orchid.svg')
+  width: 172px
+  height: 168px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 53px
+  left: -59px
+
+.cat_blue
+  background-image: url('./assets/svg/cat.svg')
+  width: 110px
+  height: 99px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 152px
+  left: 306px
+  animation: float 5s ease-in-out infinite
+
+.marguerite
+  background-image: url('./assets/svg/Sunflower.svg')
+  width: 216px
+  height: 216px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 77px
+  right: 226px
+
+.cat_grey
+  background-image: url('./assets/svg/cat2.svg')
+  width: 155px
+  height: 148px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 418px
+  right: 205px
+  animation: float 3s ease-in-out infinite
+
+.cat_orange
+  background-image: url('./assets/svg/cat3.svg')
+  width: 106px
+  height: 95px
+  transform: rotate(-0.512deg)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 640px
+  left: 66px
+  animation: float 6s ease-in-out infinite
+
+.flower_orange
+  background-image: url('./assets/svg/Flower.svg')
+  width: 70px
+  height: 70px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 440px
+  left: 200px
+
+.flower_violet
+  background-image: url('./assets/svg/Random Flower.svg')
+  width: 63px
+  height: 63px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 350px
+  right: -26px
+
+.flower_blur
+  background-image: url('./assets/svg/Hibiscus footer.svg')
+  width: 626px
+  height: 626px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+  position: absolute
+  top: 576px
+  right: -313px
+
+section, article#characters, article#place
+  scroll-margin-top: 80px
+
+@media all and (max-width: 699px)
+  .marguerite,
+  .cat_blue,
+  .cat_grey,
+  .flower_orange
+    display: none
+
+@media all and (max-width: 699px)
+  div#menu
+    margin-top: 57px
+    height: calc(100% - 57px)
+
+  main
+    padding-top: 60px
